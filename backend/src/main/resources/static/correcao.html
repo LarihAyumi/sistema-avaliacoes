@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção de Avaliações</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/correcao.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Correção de Avaliações</h1>
+        <p>Confira as respostas e atribua notas aos alunos</p>
+
+        <nav>
+            <a href="/">Relatórios</a>
+            <a href="/professor.html">Área do professor</a>
+            <a href="/aluno.html">Área do aluno</a>
+            <a href="/correcao.html">Correção</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Selecionar avaliação</h2>
+
+            <form id="formBusca">
+                <label for="avaliacao">ID da avaliação</label>
+                <input
+                    type="number"
+                    id="avaliacao"
+                    value="6"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">
+                    Buscar participantes
+                </button>
+            </form>
+
+            <p id="msgBusca" class="mensagem" role="status"></p>
+        </section>
+
+        <section class="card" id="secAlunos" hidden>
+            <h2>Participantes</h2>
+
+            <label for="alunoCorrecao">Selecione um aluno</label>
+            <select id="alunoCorrecao"></select>
+
+            <button type="button" id="btnCarregar">
+                Ver respostas
+            </button>
+
+            <p id="msgAluno" class="mensagem" role="status"></p>
+        </section>
+
+        <section class="card" id="secRespostas" hidden>
+            <h2>Respostas discursivas</h2>
+            <div id="listaRespostas"></div>
+        </section>
+
+        <section class="card" id="secResultado" hidden>
+            <h2>Resultado do aluno</h2>
+
+            <div id="resultadoNota"></div>
+
+            <button type="button" id="btnAtualizar">
+                Atualizar nota
+            </button>
+
+            <p id="msgNota" class="mensagem" role="status"></p>
+        </section>
+    </main>
+</body>
+</html>

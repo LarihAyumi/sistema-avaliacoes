@@ -253,3 +253,50 @@ form button {
 section[hidden] {
     display: none;
 }
+
+#alunoCorrecao {
+    display: block;
+    width: 100%;
+    max-width: 620px;
+    padding: 12px;
+    margin: 12px 0 18px;
+    border: 1px solid #dfc3ca;
+    border-radius: 10px;
+    background: #fffafb;
+    color: #5c433d;
+    font: inherit;
+}
+
+.texto-resposta {
+    background: #fff4f7;
+    border-left: 4px solid #d9a7b8;
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.questao-aluno h4 {
+    color: #7b5e57;
+    margin-bottom: 10px;
+}
+
+#resultadoNota {
+    background: #fff4f7;
+    border: 1px solid #f1d4dc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+#resultadoNota h3 {
+    color: #7b5e57;
+    font-size: 26px;
+    margin: 0 0 10px;
+}
+
+#btnAtualizar,
+#btnCarregar {
+    margin-top: 12px;
+}
