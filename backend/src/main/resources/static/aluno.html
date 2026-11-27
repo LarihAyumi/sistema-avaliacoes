@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/aluno.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Área do Aluno</h1>
+        <p>Responda suas avaliações e acompanhe suas notas</p>
+
+        <nav>
+            <a href="/">Relatórios</a>
+            <a href="/professor.html">Área do professor</a>
+            <a href="/aluno.html">Área do aluno</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Selecionar avaliação</h2>
+
+            <form id="formBusca">
+                <label for="participacao">ID da participação</label>
+                <input
+                    type="number"
+                    id="participacao"
+                    value="91"
+                    min="1"
+                    required
+                >
+
+                <label for="avaliacao">ID da avaliação</label>
+                <input
+                    type="number"
+                    id="avaliacao"
+                    value="6"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">Carregar avaliação</button>
+            </form>
+
+            <p id="msgBusca" class="mensagem" role="status"></p>
+        </section>
+
+        <section class="card" id="secQuestoes" hidden>
+            <h2>Questões da avaliação</h2>
+            <div id="listaQuestoes"></div>
+        </section>
+
+        <section class="card" id="secNota" hidden>
+            <h2>Minha nota</h2>
+            <div id="resultadoNota"></div>
+            <button id="btnNota" type="button">
+                Atualizar nota
+            </button>
+            <p id="msgNota" class="mensagem" role="status"></p>
+        </section>
+    </main>
+</body>
+</html>

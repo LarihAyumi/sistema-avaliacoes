@@ -209,3 +209,47 @@ form button {
     font-weight: bold;
     min-height: 22px;
 }
+
+
+.questao-aluno {
+    background: #fffafb;
+    border: 1px solid #f1d4dc;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.questao-aluno h3 {
+    color: #7b5e57;
+    margin-top: 0;
+}
+
+.alternativa-aluno {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff4f7;
+    border: 1px solid #edd7de;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.alternativa-aluno:hover {
+    background: #f7d9e3;
+}
+
+.alternativa-aluno input[type="radio"] {
+    width: 18px;
+    min-height: 18px;
+    accent-color: #7b5e57;
+}
+
+.questao-aluno button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+section[hidden] {
+    display: none;
+}
