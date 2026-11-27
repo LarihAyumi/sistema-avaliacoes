@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Professor</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/professor.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Área do Professor</h1>
+        <p>Gerencie questões, avaliações e participantes</p>
+
+        <nav>
+            <a href="/">Relatórios</a>
+            <a href="/professor.html">Área do professor</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Cadastrar questão</h2>
+
+            <form id="formQuestao">
+                <label for="enunciado">Enunciado</label>
+                <textarea id="enunciado" required></textarea>
+
+                <label for="tipo">Tipo da questão</label>
+                <select id="tipo">
+                    <option value="1">Objetiva</option>
+                    <option value="2">Discursiva</option>
+                </select>
+
+                <div id="alternativas">
+                    <p>Alternativas — selecione a correta:</p>
+
+                    <div id="listaAlternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="correta" value="0" checked>
+                            <input type="text" placeholder="Alternativa A">
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="correta" value="1">
+                            <input type="text" placeholder="Alternativa B">
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="correta" value="2">
+                            <input type="text" placeholder="Alternativa C">
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="correta" value="3">
+                            <input type="text" placeholder="Alternativa D">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">Salvar questão</button>
+            </form>
+
+            <p id="msgQuestao" class="mensagem" role="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>Cadastrar avaliação</h2>
+
+            <form id="formAvaliacao">
+                <label for="titulo">Título</label>
+                <input id="titulo" required>
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao"></textarea>
+
+                <label for="inicio">Início</label>
+                <input type="datetime-local" id="inicio" required>
+
+                <label for="fim">Fim</label>
+                <input type="datetime-local" id="fim" required>
+
+                <label for="criador">ID do professor</label>
+                <input type="number" id="criador" value="1" min="1" required>
+
+                <button type="submit">Salvar avaliação</button>
+            </form>
+
+            <p id="msgAvaliacao" class="mensagem" role="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>Adicionar questão à avaliação</h2>
+
+            <form id="formItem">
+                <label for="avItem">ID da avaliação</label>
+                <input type="number" id="avItem" min="1" required>
+
+                <label for="questaoItem">ID da questão</label>
+                <input type="number" id="questaoItem" min="1" required>
+
+                <label for="valorItem">Valor em pontos</label>
+                <input type="number" id="valorItem"
+                       min="0.01" step="0.01" required>
+
+                <button type="submit">Adicionar questão</button>
+            </form>
+
+            <p id="msgItem" class="mensagem" role="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>Adicionar aluno à avaliação</h2>
+
+            <form id="formAluno">
+                <label for="avAluno">ID da avaliação</label>
+                <input type="number" id="avAluno" min="1" required>
+
+                <label for="usuarioAluno">ID do aluno</label>
+                <input type="number" id="usuarioAluno" min="1" required>
+
+                <button type="submit">Adicionar aluno</button>
+            </form>
+
+            <p id="msgAluno" class="mensagem" role="status"></p>
+        </section>
+    </main>
+</body>
+</html>
