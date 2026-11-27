@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff4f7;
+    color: #4e3b37;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: linear-gradient(135deg, #7b5e57, #d9a7b8);
+    color: white;
+    padding: 28px 8%;
+    box-shadow: 0 3px 10px #00000018;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+    opacity: .9;
+}
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #fffdfd;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px #00000010;
+    border: 2px solid #f1d4dc;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #7b5e57;
+}
+
+.grafico {
+    position: relative;
+    height: 320px;
+    margin: 24px 0;
+    background: #fffafb;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #f1d4dc;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th, td {
+    border: 1px solid #edd7de;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #f7d9e3;
+    color: #5c433d;
+}
+
+tr:nth-child(even) {
+    background: #fff7f9;
+}
+
+tr:nth-child(odd) {
+    background: #fffdfd;
+}
+
+input, button {
+    padding: 10px;
+    border: 1px solid #d9b8c4;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+input {
+    background: #fffdfd;
+    color: #4e3b37;
+}
+
+button {
+    background: #7b5e57;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #5c433d;
+    transform: scale(1.02);
+}
+
+label {
+    color: #7b5e57;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+@media (max-width: 700px) {
+    .card {
+        padding: 15px;
+        overflow-x: auto;
+    }
+}

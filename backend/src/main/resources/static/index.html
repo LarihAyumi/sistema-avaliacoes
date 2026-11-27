@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Avaliações</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Avaliações</h1>
+        <p>Relatórios de desempenho acadêmico</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>1. Desempenho por avaliação</h2>
+            <div class="grafico">
+                <canvas id="graficoDesempenho"></canvas>
+            </div>
+            <div id="tabelaDesempenho"></div>
+        </section>
+
+        <section class="card">
+            <h2>2. Evolução do aluno</h2>
+
+            <label for="aluno">ID do aluno:</label>
+            <input type="number" id="aluno" value="3" min="1">
+            <button onclick="carregarEvolucao()">Consultar</button>
+
+            <div class="grafico">
+                <canvas id="graficoEvolucao"></canvas>
+            </div>
+            <div id="tabelaEvolucao"></div>
+        </section>
+
+        <section class="card">
+            <h2>3. Questões mais erradas</h2>
+            <div class="grafico">
+                <canvas id="graficoQuestoes"></canvas>
+            </div>
+            <div id="tabelaQuestoes"></div>
+        </section>
+    </main>
+</body>
+</html>
