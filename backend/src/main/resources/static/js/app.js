@@ -45,7 +45,8 @@ function grafico(id, tipo, labels, datasets) {
     }
 
     graficos[id] = new Chart(
-        document.getElementById(id), {
+        document.getElementById(id),
+        {
             type: tipo,
             data: {
                 labels,
@@ -53,7 +54,37 @@ function grafico(id, tipo, labels, datasets) {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: "#5c433d",
+                            font: {
+                                family: "Arial",
+                                size: 13
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: "#7b5e57"
+                        },
+                        grid: {
+                            color: "#f1d4dc"
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: "#7b5e57"
+                        },
+                        grid: {
+                            color: "#f1d4dc"
+                        }
+                    }
+                }
             }
         }
     );
@@ -85,11 +116,16 @@ async function carregarDesempenho() {
         "graficoDesempenho",
         "bar",
         dados.map(d => d.titulo + " #" + d.id_avaliacao),
-        [{
-            label: "Média",
-            data: dados.map(d => d.media),
-            backgroundColor: "#365cc3"
-        }]
+        [
+            {
+                label: "Média das avaliações",
+                data: dados.map(d => d.media),
+                backgroundColor: "#d9a7b8",
+                borderColor: "#b97a8c",
+                borderWidth: 1,
+                borderRadius: 7
+            }
+        ]
     );
 }
 
@@ -111,14 +147,24 @@ async function carregarEvolucao() {
             {
                 label: "Nota do aluno",
                 data: dados.map(d => d.nota_aluno),
-                borderColor: "#365cc3",
-                backgroundColor: "#365cc3"
+                borderColor: "#c88ea2",
+                backgroundColor: "#c88ea2",
+                borderWidth: 3,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                tension: 0.3,
+                fill: false
             },
             {
                 label: "Média da avaliação",
                 data: dados.map(d => d.media_avaliacao),
-                borderColor: "#e59a32",
-                backgroundColor: "#e59a32"
+                borderColor: "#7b5e57",
+                backgroundColor: "#7b5e57",
+                borderWidth: 3,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                tension: 0.3,
+                fill: false
             }
         ]
     );
@@ -140,11 +186,16 @@ async function carregarQuestoes() {
         "graficoQuestoes",
         "bar",
         dados.map(d => "Questão " + d.id_questao),
-        [{
-            label: "Percentual de erros (%)",
-            data: dados.map(d => d.percentual_erros),
-            backgroundColor: "#d45b61"
-        }]
+        [
+            {
+                label: "Percentual de erros (%)",
+                data: dados.map(d => d.percentual_erros),
+                backgroundColor: "#b97a8c",
+                borderColor: "#7b5e57",
+                borderWidth: 1,
+                borderRadius: 7
+            }
+        ]
     );
 }
 
